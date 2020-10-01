@@ -21,7 +21,7 @@ def verticesAdj(grafo, vertice):
 def buscaLargura(grafo, vertice):
     # Funcao para realizar a busca em largura - buscados os vizinhos
     #   -> faz uma lista de vertices ja visitados
-    #   ->faz uma lista de vestices "para visitar"
+    #   -> faz uma lista de vestices "para visitar"
     lista = []
     visitados = []
     visitados.append(vertice)
@@ -40,5 +40,8 @@ def buscaLargura(grafo, vertice):
 
 
 # Pedir o vertice para iniciar a busca
-vertice = input("Informe o vertice inicial:")
+vertice = input(
+    "Informe o vertice inicial (entre {} e ){}): ".format(
+        grafo[0][0], grafo[-1][0])
+)
 buscaLargura(grafo, int(vertice))
