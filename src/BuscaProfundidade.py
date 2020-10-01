@@ -10,15 +10,15 @@ grafo = [
 ]
 
 
-def selecionar_vertices_adjacentes(grafo, vertice):
+def selecionar_vertices_adjacentes(grafo: list, vertice: int) -> list:
     # Funcao para adicionar os vertices que estao por vir (pilha)
-    adj = []
+    adjacentes = []
     for i in range(1, len(grafo[vertice])):
-        adj.append(grafo[vertice][i])
-    return adj
+        adjacentes.append(grafo[vertice][i])
+    return adjacentes
 
 
-def buscar_em_profundidade(grafo, vertice, visitados):
+def buscar_em_profundidade(grafo: list, vertice: int, visitados: list) -> bool:
     # Funcao para realizar a busca em profundidade percorrendo os vertices
     if vertice in visitados:
         return False
