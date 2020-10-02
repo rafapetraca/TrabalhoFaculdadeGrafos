@@ -23,18 +23,19 @@ def buscar_em_largura(grafo, vertice):
     # Verificacao dos vertices que estao sendo percorridos
     #  -> se eles estiverem na lista de ja visitados
     while len(lista):
-        v = lista.pop(0)
-        for vizinho in utils.selecionar_vertices_adjacentes(grafo, v):
-            if not vizinho in visitados:
+        vertice_atual = lista.pop(0)
+        for vizinho in utils.selecionar_vertices_adjacentes(grafo, vertice_atual):
+            if vizinho not in visitados:
                 lista.append(vizinho)
                 visitados.append(vizinho)
 
-    print('visitados =>', visitados)
+    return visitados
 
 
 # Pedir o vertice para iniciar a busca
 vertice = input(
-    "Informe o vertice inicial (entre {} e ){}): ".format(
+    "Informe o vertice inicial (entre {} e {}): ".format(
         grafo[0][0], grafo[-1][0])
 )
-buscar_em_largura(grafo, int(vertice))
+vertices_visitados = buscar_em_largura(grafo, int(vertice))
+print('visitados =>', vertices_visitados)

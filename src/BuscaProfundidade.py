@@ -25,7 +25,7 @@ def buscar_em_profundidade(grafo: list, vertice: int, visitados: list) -> bool:
 # Pedir o vertice para inciar a busca
 visitados = []
 vertice = input(
-    "Informe o vertice inicial (entre {} e ){}): ".format(
+    "Informe o vertice inicial (entre {} e {}): ".format(
         grafo[0][0], grafo[-1][0])
 )
 buscar_em_profundidade(grafo, int(vertice), visitados)
