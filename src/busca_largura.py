@@ -11,7 +11,7 @@ grafo = [
 ]
 
 
-def buscar_em_largura(grafo, vertice):
+def buscar_em_largura(grafo: list, vertice: int) -> list:
     # Funcao para realizar a busca em largura - buscados os vizinhos
     #   -> faz uma lista de vertices ja visitados
     #   -> faz uma lista de vestices "para visitar"
