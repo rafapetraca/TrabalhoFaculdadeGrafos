@@ -1,3 +1,5 @@
+import utils
+
 # Estrutura do grafo ja pronta
 grafo = [
     [0, 1, 2],
@@ -10,20 +12,12 @@ grafo = [
 ]
 
 
-def selecionar_vertices_adjacentes(grafo: list, vertice: int) -> list:
-    # Funcao para adicionar os vertices que estao por vir (pilha)
-    adjacentes = []
-    for i in range(1, len(grafo[vertice])):
-        adjacentes.append(grafo[vertice][i])
-    return adjacentes
-
-
 def buscar_em_profundidade(grafo: list, vertice: int, visitados: list) -> bool:
     # Funcao para realizar a busca em profundidade percorrendo os vertices
     if vertice in visitados:
         return False
     visitados.append(vertice)
-    for vizinho in selecionar_vertices_adjacentes(grafo, vertice):
+    for vizinho in utils.selecionar_vertices_adjacentes(grafo, vertice):
         if vizinho not in visitados:
             buscar_em_profundidade(grafo, vizinho, visitados)
 
