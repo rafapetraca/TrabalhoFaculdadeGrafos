@@ -4,7 +4,7 @@ import src.utils as utils
 
 class TestUtils(unittest.TestCase):
 
-    def test_image_type(self):
+    def test_encontrar_vizinhos(self):
         grafo = [
             [0, 1, 2],
             [1, 0, 3, 4],
