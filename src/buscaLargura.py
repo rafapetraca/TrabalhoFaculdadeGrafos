@@ -1,3 +1,4 @@
+import utils
 # Estrutura do grafo ja pronta
 grafo = [
     [0, 1, 2],
@@ -10,15 +11,7 @@ grafo = [
 ]
 
 
-def verticesAdj(grafo, vertice):
-    # Funcao para definir os adjacentes
-    adj = []
-    for i in range(1, len(grafo[vertice])):
-        adj.append(grafo[vertice][i])
-    return adj
-
-
-def buscaLargura(grafo, vertice):
+def buscar_em_largura(grafo, vertice):
     # Funcao para realizar a busca em largura - buscados os vizinhos
     #   -> faz uma lista de vertices ja visitados
     #   -> faz uma lista de vestices "para visitar"
@@ -31,7 +24,7 @@ def buscaLargura(grafo, vertice):
     #  -> se eles estiverem na lista de ja visitados
     while len(lista):
         v = lista.pop(0)
-        for vizinho in verticesAdj(grafo, v):
+        for vizinho in utils.selecionar_vertices_adjacentes(grafo, v):
             if not vizinho in visitados:
                 lista.append(vizinho)
                 visitados.append(vizinho)
@@ -44,4 +37,4 @@ vertice = input(
     "Informe o vertice inicial (entre {} e ){}): ".format(
         grafo[0][0], grafo[-1][0])
 )
-buscaLargura(grafo, int(vertice))
+buscar_em_largura(grafo, int(vertice))
