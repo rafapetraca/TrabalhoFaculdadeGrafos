@@ -1,5 +1,6 @@
 import src.utils as utils
 
+
 def buscar_em_profundidade(grafo: list, vertice: int, visitados: list) -> bool:
     # Funcao para realizar a busca em profundidade percorrendo os vertices
     if vertice in visitados:
